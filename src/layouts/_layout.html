@@ -1,14 +1,19 @@
 <html>
 <head>
   <title>{{title}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="./style.sass" rel="stylesheet">
   <!-- load source script here -->
   <script src="./main.js" defer="defer"></script>
 </head>
 <body>
   <div class="out">
+    <div class="content">
     {% include "src/components/_header.html" %}
-    {% block content %}{% endblock %}
+      {% block content %}{% endblock %}
+    </div>
+    {% include "src/components/_footer.html" %}
+
   </div>
 </body>
 </html>

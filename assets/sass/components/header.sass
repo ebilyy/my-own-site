@@ -1,0 +1,137 @@
+@import ../abstract/_mixins
+
+.header
+  color: #1a1a1a
+  margin: 30px 0
+
+  +r(1024)
+    margin: 20px 0
+  +r(767)
+    position: relative
+    &.is-open
+      height: 100vh
+    &::after
+      content: ''
+      position: absolute
+      width: 100%
+      height: 100vh
+      background: #fff
+      top: 0
+      left: 0
+      transform: translateX(-100%)
+      transition: all 0.2s ease
+      z-index: 1
+
+  &__logo
+    font-weight: 600
+    font-size: 20px
+    line-height: 24px
+    transition: all 0.2s ease
+
+  &__inner
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 10px 0
+    position: relative
+    overflow: hidden
+    +r(1024)
+      padding: 10px 20px
+    +r(767)
+      .is-open &
+        overflow: visible
+  &__aside
+    display: flex
+    justify-content: space-between
+    align-items: center
+    +r(767)
+      position: absolute
+      top: 0
+      left: 0
+      transform: translateX(120%)
+      width: 100vw
+      height: 100%
+      transition: all 0.2s ease
+      display: flex
+      flex-direction: column
+      
+    .is-open &
+      transform: translateX(0)
+  //     &::after
+  //       transform: translateX(0)
+  //       opacity: 1
+  &__btn
+    display: none
+    +r(767)
+      display: block
+  &__nav
+    +r(767)
+      display: flex
+      flex-direction: column
+      width: 100%
+      // text-align: center
+      padding-left: 20px
+      padding-top: 180px
+      // flex: 1 0 auto
+.nav
+  display: flex
+
+  &__link
+    display: block
+    color: #1a1a1a
+    text-decoration: none
+    font-size: 20px
+    line-height: 24px
+    padding: 8px 0
+    margin-right: 22px
+    position: relative
+    overflow: hidden
+    &.is-active
+      font-weight: bold
+
+    &::after
+      content: ''
+      width: 100%
+      position: absolute
+      height: 1px
+      background-color: #1a1a1a
+      left: 0
+      bottom: 5px
+      transform: translateX(-100%)
+      transition: all 0.2s ease
+      // opacity: 0
+    &:hover
+      &::after
+        transform: translateX(0)
+        opacity: 1
+  // &__switcher
+  //   +r(767)
+  //     // flex-shrink: 0
+
+.burger-btn
+  background-color: transparent
+  border: none
+  position: relative
+  padding: 5px 2px
+  width: 32px
+  // border: solid 1px red
+  text-align: center
+  overflow: hidden
+  z-index: 100
+  span
+    height: 2px
+    width: 26px
+    background-color: #1a1a1a
+    margin-bottom: 4px
+    display: inline-block
+    transition: all 0.2s ease
+    &:last-child
+      margin-bottom: 0
+  &.is-active
+    span
+      &:nth-child(1)
+        transform: rotate(45deg) translate(5px, 4px)
+      &:nth-child(2)
+        transform: translateX(1000%)
+      &:nth-child(3)
+        transform: rotate(-45deg) translate(4px, -4px)

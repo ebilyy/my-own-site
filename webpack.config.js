@@ -3,12 +3,13 @@ const HtmlBundlerPlugin = require('html-bundler-webpack-plugin');
 const Nunjucks = require('nunjucks');
 
 const pages = require('./src/data/pages');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const createPages = (pages) => {
   const entries = {};
   pages.forEach((page) => {
     entries[page.path] = {
-      import : page.view,
+      import: page.view,
       data: page.data,
     }
   });
@@ -16,6 +17,20 @@ const createPages = (pages) => {
 };
 module.exports = {
   mode: 'development',
+  devServer: {
+    watchFiles: {
+      paths: ['src/**/*.*'],
+      options: {
+        usePolling: true,
+      },
+    },
+    static: {
+      directory: './dist',
+      watch: true,
+    },
+    hot: true,
+    port: 9000,
+  },
   output: {
     path: path.join(__dirname, 'dist/'),
   },
@@ -31,6 +46,11 @@ module.exports = {
         // output filename of extracted CSS
         filename: 'assets/css/[name].[contenthash:8].css',
       },
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: "assets/img", to: "assets/img" },
+      ],
     }),
   ],
 
