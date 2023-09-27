@@ -1,6 +1,5 @@
 const path = require('path');
 const HtmlBundlerPlugin = require('html-bundler-webpack-plugin');
-const Nunjucks = require('nunjucks');
 
 const pages = require('./src/data/pages');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -38,6 +37,7 @@ module.exports = {
   plugins: [
     new HtmlBundlerPlugin({
       entry: createPages(pages),
+      preprocessor: 'nunjucks',
       js: {
         // output filename of extracted JS
         filename: 'assets/js/[name].[contenthash:8].js',
@@ -56,14 +56,6 @@ module.exports = {
 
   module: {
     rules: [
-      // HTML templates
-      {
-        test: /\.html$/,
-        loader: HtmlBundlerPlugin.loader, // HTML template loader
-        options: {
-          preprocessor: (content, { data }) => Nunjucks.renderString(content, data),
-        },
-      },
       // styles
       {
         test: /\.(css|sass|scss)$/,
