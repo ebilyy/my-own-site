@@ -1,1 +1,2 @@
-console.log('home main.js 2 3')
+const runHeaderMenu = require('../../../assets/js/header.js');
+runHeaderMenu();
