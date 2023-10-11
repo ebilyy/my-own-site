@@ -10,6 +10,11 @@ const pages = [
     path: 'about/index',
     view: `src/views/about/index.html`,
     data: aboutData
+  },
+  {
+    path: 'newsletter/index',
+    view: `src/views/newsletter/index.html`,
+    data: aboutData
   }
 ]
 

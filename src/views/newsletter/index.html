@@ -1,0 +1,42 @@
+{% extends "src/layouts/_layout.html" %}
+{# {% include "src/components/_hero.html" %} #}
+{% block content %}
+  <div class="subscription">
+    <div class="container subscription__data">
+
+    <div class="subscription__info center"> Newsletters</div>
+    <h2 class="subscription__title">Stories and interviews</h2>
+    <div class="subscription__description">Subscribe to learn about new product features, the latest in technology, solutions, and updates.</div>
+
+    <form class="subscription__form form">
+      <div class="form__row">
+        <input class="form-input form__input" type="text" placeholder="Enter your email">
+        <button class="form__submit" type="submit">Subscribe</button>
+      </div>
+      <p class="form__description">We care about your data in our <a href="#">privacy policy</a></p>
+    </form>
+
+   
+  </div>
+  <div class="container subscription__posts subs-posts">
+    <h3 class="subscription__subtitle">All blog posts</h3>
+    <div class="post-items">
+      {% for item in [1,2,3] %}
+      <div class="post-item">
+        <div class="post-item__image">
+          <img src="/assets/img/blog-img.jpg" alt="">
+        </div>
+        <div class="post-item__date">Sunday , 1 Jan 2023</div>
+        <h3 class="post-item__title">Bill Walsh leadership lessons</h3>
+        <div class="post-item__description">Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?</div>
+        <div class="post-item__tags">
+          <span class="tag">Leadership</span>
+          <span class="tag tag--green">Management</span>
+          <span class="tag tag--red">Presentation</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+{% endblock %}

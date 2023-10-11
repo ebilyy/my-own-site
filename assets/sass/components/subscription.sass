@@ -1,0 +1,120 @@
+
+@import ../abstract/_mixins
+
+.subscription
+  padding: 60px 0
+  &__info
+    margin-bottom: 12px
+    text-align: center
+    font-weight: 600
+    font-size: 16px
+    line-height: 24px
+  &__title
+    text-align: center
+    font-size: 48px
+    font-weight: 600
+    line-height: 60px
+    margin-bottom: 24px
+    color: #1A1A1A
+  &__description
+    text-align: center
+    margin: 0 auto
+    width: 100%
+    max-width: 650px
+    font-size: 20px
+    line-height: 30px
+  &__form
+    padding: 40px 0
+    margin-bottom: 20px
+  &__subtitle
+    font-size: 24px
+    line-height: 32px
+    font-weight: 600
+    margin-bottom: 32px
+    color: #1A1A1A
+.form
+  padding: 40px 0
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+  align-items: center
+  justify-content: center
+  &__row
+    display: flex
+    margin-bottom: 8px
+    width: 100%
+    max-width: 490px
+
+  &__input
+    padding: 12px 14px 12px 16px 
+    border-radius: 8px
+    border: 1px solid #D0D5DD
+    width: 360px
+    margin-right: 16px
+    font-size: 14px
+    +placeholder
+      font-weight: 400
+      color: #667085
+  &__submit
+    padding: 12px 20px
+    border-radius: 8px
+    border: 1px solid #7F56D9
+    background-color: #7F56D9
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05)
+    color: #fff
+    font-size: 16px
+    font-weight: 500
+    line-height: 24px
+  &__description
+    color: #667085
+    font-size: 14px
+    width: 100%
+    max-width: 490px
+    a
+      color: #667085
+    &:hover
+      cursor: pointer
+
+.post-items
+  display: flex
+  justify-content: space-between
+  gap: 32px
+  width: 100%
+.post-item
+  &__image
+    margin-bottom: 32px
+    overflow: hidden
+  &__date
+    color: #6941C6
+    font-size: 14px
+    font-weight: 600
+    line-height: 20px
+    margin-bottom: 12px
+  &__title
+    font-size: 24px
+    font-weight: 600
+    line-height: 32px
+    margin-bottom: 12px
+    color: #1A1A1A
+  &__description
+    font-size: 16px
+    line-height: 24px
+    font-weight: 400
+    margin-bottom: 24px
+    color: #667085
+
+.tag
+  background-color: #F9F5FF
+  padding: 2px 10px
+  font-size: 14px
+  font-weight: 500
+  line-height: 20px
+  color: #6941C6
+  border-radius: 16px
+  margin-right: 8px
+  &--green
+    color: #027A48
+    background-color: #ECFDF3
+  &--red
+    color: #C01048
+    background-color: #FFF1F3
