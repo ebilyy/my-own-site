@@ -8,10 +8,14 @@
     </button>
     <div class="header__aside">
       <nav class="header__nav nav">
-        <a href="#" class="nav__link ">Blog</a>
-        <a href="#" class="nav__link">Projects 2</a>
-        <a href="#" class="nav__link is-active">About</a>
-        <a href="#" class="nav__link">Newsletter</a>
+        {% for link in headerLinks %}
+          {% if link.path === path %}
+            {% set active = 'is-active' %}
+          {% else %}
+           {% set active = '' %}
+          {% endif %}
+        <a href="{{link.path}}" class="nav__link {{active}}">{{link.text}}</a>
+        {% endfor %}
       </nav>
       <div class="theme-switcher header__switcher">
         swich

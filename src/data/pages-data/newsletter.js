@@ -1,5 +1,8 @@
+const headerLinks = require('../header')
 module.exports = {
-  title: 'newsletter',
+  headerLinks,
+  path: '/newsletter',
+  title: 'Newsletter',
   description: 'newsletter page',
   content: `newsletter page content`
 }

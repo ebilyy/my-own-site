@@ -1,5 +1,6 @@
 const homeData = require('./pages-data/home')
 const aboutData = require('./pages-data/about')
+const newsletterData = require('./pages-data/newsletter')
 const pages = [
   {
     path: 'index',
@@ -14,7 +15,7 @@ const pages = [
   {
     path: 'newsletter/index',
     view: `src/views/newsletter/index.html`,
-    data: aboutData
+    data: newsletterData
   }
 ]
 

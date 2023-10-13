@@ -1,16 +1,20 @@
-const homeData = require('./pages-data/home')
-const aboutData = require('./pages-data/about')
-const pages = [
+const headerLinks = [
   {
-    path: 'index',
-    view: `src/views/home/index.html`,
-    data: homeData
+    path: '/',
+    text: 'Blog'
   },
   {
-    path: 'about/index',
-    view: `src/views/about/index.html`,
-    data: aboutData
+    path: '/projects',
+    text: 'Projects'
+  },
+  {
+    path: '/about',
+    text: 'About'
+  },
+  {
+    path: '/newsletter',
+    text: 'Newsletter'
   }
-]
+];
 
-module.exports =  pages
+module.exports =  headerLinks
