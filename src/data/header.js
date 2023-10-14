@@ -14,6 +14,10 @@ const headerLinks = [
   {
     path: '/newsletter',
     text: 'Newsletter'
+  },
+  {
+    path: '/article',
+    text: 'Article'
   }
 ];
 
